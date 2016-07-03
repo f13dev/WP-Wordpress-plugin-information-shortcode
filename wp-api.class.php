@@ -2,14 +2,14 @@
 class wp_api
 {
     // Variable to store plugin name
-    var $pluginName;
+    var $slug;
     // Variable to store the results
     var $results;
     
-    function wp_api($aPluginName)
+    function wp_api($aSlug)
     {
         // Set the pluignName of the new object to the argument
-        $this->pluginName = $aPluginName;
+        $this->slug = $aSlug;
     }
     
     private function getResults()
@@ -34,5 +34,26 @@ class wp_api
 
         // Close the curl session
         curl_close($curl);
+    }
+    
+    function getPluginName()
+    {
+        return $results['name'];
+    }
+    
+    function getPluginSlug()
+    {
+        return $this->slug;
+    }
+    
+    function getVersion()
+    {
+        return $this->results['version'];
+    }
+    
+    function getAuthor()
+    {
+        // Returns the author name surrounded by hyperlink to homepage
+        return $this->results['author'];
     }
 }
