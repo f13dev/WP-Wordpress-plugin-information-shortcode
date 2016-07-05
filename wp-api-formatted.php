@@ -1,6 +1,6 @@
 <?php
 require_once('wp-api.class.php');
-$wpapi = new wordpress_pluing_information('buddypress');
+$wpapi = new wordpress_pluing_information('akismet');
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,6 +9,10 @@ $wpapi = new wordpress_pluing_information('buddypress');
         <link rel="stylesheet" type="text/css" href="css/wp-api.css">
     </head>
     <body>
+        <?php
+        if ($wpapi->results != [])
+        {
+        ?>
         <div class="wp-container">
             <div class="wp-header" style="background-image: url(<?php echo $wpapi->getBannerURL(); ?>);">
                 <p class="wp-name"><?php echo $wpapi->getName(); ?></p>
@@ -36,5 +40,12 @@ $wpapi = new wordpress_pluing_information('buddypress');
                 <div class="wp-tags">Tags: <?php echo $wpapi->getTagsList(); ?></div>
             </div>
         </div>
+        <?php
+        }
+        else
+        {
+            echo 'The slug "' . $wpapi->slug . '" was not found on WordPress.org';
+        }
+        ?>
     </body>
 </html>
