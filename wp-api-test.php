@@ -21,3 +21,7 @@ echo 'Rating: ' . $wpapi->results['rating'] . ' from ' . $wpapi->results['num_ra
 echo 'Downloaded: ' . $wpapi->results['downloaded'] . '<br/>';
 echo 'Last updated: ' . $wpapi->results['last_updated'] . '<br/>';
 echo 'Added: ' . $wpapi->results['added'] . '<br/>';
+echo 'Header image: <br/>';
+    echo '<img src="https://ps.w.org/' . $wpapi->results['slug'] . '/assets/banner-772x250.jpg"><br/>';
+echo 'Icon: <br/>';
+    echo '<img src="https://ps.w.org/' . $wpapi->results['slug'] . '/assets/icon-128x128.jpg"><br/>';
