@@ -1,15 +1,16 @@
 <?php
-class wp_api
+class wordpress_pluing_information
 {
     // Variable to store plugin name
     var $slug;
-    // Variable to store the results
     var $results;
     
-    function wp_api($aSlug)
+    function wordpress_pluing_information($aSlug)
     {
         // Set the pluignName of the new object to the argument
         $this->slug = $aSlug;
+        // Generate results
+        $this->getResults();
     }
     
     private function getResults()
@@ -18,7 +19,7 @@ class wp_api
         $curl = curl_init();
         
         // set the curl URL
-        $url = 'https://api.wordpress.org/plugins/info/1.0/' . $this->pluignName . '.json';
+        $url = 'https://api.wordpress.org/plugins/info/1.0/' . $this->slug . '.json';
         
         // Set curl options
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -30,30 +31,9 @@ class wp_api
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         // Get the results and store the XML to results
-        $this->results = json_decode(curl_exec($curl));
+        $this->results = json_decode(curl_exec($curl), true);
 
         // Close the curl session
         curl_close($curl);
-    }
-    
-    function getPluginName()
-    {
-        return $results['name'];
-    }
-    
-    function getPluginSlug()
-    {
-        return $this->slug;
-    }
-    
-    function getVersion()
-    {
-        return $this->results['version'];
-    }
-    
-    function getAuthor()
-    {
-        // Returns the author name surrounded by hyperlink to homepage
-        return $this->results['author'];
     }
 }
