@@ -35,7 +35,7 @@
 
 .wp-information
 {
-    padding: 30px 15px 55px 30px;
+    padding: 30px 15px 30px 30px;
     font-size: 16px;
     line-height: 24px;
     margin: 0 0 30px;
@@ -71,4 +71,39 @@
     background: #d54e21;
     line-height: 44px;
     margin-bottom: 0.3em;
+}
+
+.wp-tags > ul
+{
+    display: inline-block;
+}
+
+.wp-tags > ul > li 
+{
+    display: inline-block;
+    background: #fff;
+    padding: 5px 10px;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.wp-rating
+{
+    display: inline-block;
+    position: inherit;
+    margin-bottom: 0;
+    max-width: 60%;
+    line-height: 20px;
+}
+
+.wp-downloads
+{
+    display: inline-block;
+    position: inherit;
+    margin-bottom:0;
+    width: 35%;
+    line-height: 20px;
+    text-align: right;
 }

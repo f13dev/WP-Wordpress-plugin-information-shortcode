@@ -1,6 +1,6 @@
 <?php
 require_once('wp-api.class.php');
-$wpapi = new wordpress_pluing_information('WP-Twitter-profile-widget');
+$wpapi = new wordpress_pluing_information('buddypress');
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,14 +15,25 @@ $wpapi = new wordpress_pluing_information('WP-Twitter-profile-widget');
             </div>
             <div class="wp-information">
                 <div class="wp-description">
-                    <?php echo $wpapi->getRatingStars(); ?><br/>
-                    <?php echo $wpapi->getShortDescription(); ?>
+                    <p class="wp-rating">
+                        <?php echo $wpapi->getRatingStars(); ?> 
+                        <?php echo $wpapi->getRating(); ?> from 
+                        <?php echo $wpapi->getRatingNumber(); ?> ratings
+                    </p>
+                    <p class="wp-downloads">
+                        Downloads: <?php echo $wpapi->getNumberDownloads(); ?>
+                    </p>
+                    <br/>
+                    <p class="wp-short-description">
+                        <strong>Description: </strong><?php echo $wpapi->getShortDescription(); ?>
+                    </p>
                 </div>
                 <div class="wp-links">
                     <a class="wp-button" href="<?php echo $wpapi->getDownloadURL(); ?>">Download Version <?php  echo $wpapi->getVersion();?></a>
                     <a class="wp-button" href="<?php echo $wpapi->getPluginURL(); ?>">More information</a>
                 </div>
                 <br style="clear: both" />
+                <div class="wp-tags">Tags: <?php echo $wpapi->getTagsList(); ?></div>
             </div>
         </div>
     </body>
