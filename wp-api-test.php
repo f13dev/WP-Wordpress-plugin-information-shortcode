@@ -2,26 +2,25 @@
 // Require the api PHP file
 require_once('wp-api.class.php');
 // Create a new object for the API
-$wpapi = new wordpress_pluing_information('wp-twitter-profile-widget');
+$wpapi = new wordpress_pluing_information('WP-Twitter-profile-widget');
+
 
 // Returning results
-echo 'Name: ' . $wpapi->results['name'] . '<br/>';
-echo 'Slug: ' . $wpapi->results['slug'] . '<br/>';
-echo 'Version: ' . $wpapi->results['version'] . '<br/>';
-echo 'Author' . $wpapi->results['author'] . '<br/>';
-echo 'Author profile: ' . $wpapi->results['author_profile'] . '<br/>';
-echo 'Contributors: <br/>';
-    foreach ($wpapi->results['contributors'] as $key => $value)
-    {
-        echo '<li><a href="' . $value . '">' . $key . '</a></li>';
-    }
-echo 'Requires version: ' . $wpapi->results['requires'] . '<br/>';
-echo 'Tested on: ' . $wpapi->results['tested'] . '<br/>';
-echo 'Rating: ' . $wpapi->results['rating'] . ' from ' . $wpapi->results['num_ratings'] . ' ratings<br/>';
-echo 'Downloaded: ' . $wpapi->results['downloaded'] . '<br/>';
-echo 'Last updated: ' . $wpapi->results['last_updated'] . '<br/>';
-echo 'Added: ' . $wpapi->results['added'] . '<br/>';
-echo 'Header image: <br/>';
-    echo '<img src="https://ps.w.org/' . $wpapi->results['slug'] . '/assets/banner-772x250.jpg"><br/>';
-echo 'Icon: <br/>';
-    echo '<img src="https://ps.w.org/' . $wpapi->results['slug'] . '/assets/icon-128x128.jpg"><br/>';
+echo 'Name: ' . $wpapi->getName() . '<br/>';
+echo 'Slug: ' . $wpapi->getSlug() . '<br/>';
+echo 'Version: ' . $wpapi->getVersion() . '<br/>';
+echo 'Author' . $wpapi->getAuthor() . '<br/>';
+echo 'Author profile: ' . $wpapi->getAuthorLink() . '<br/>';
+echo 'Contributors: ' . $wpapi->getContributorsList();
+echo 'Requires version: ' . $wpapi->getVersionRequired() . '<br/>';
+echo 'Tested on: ' . $wpapi->getVersionTestedOn . '<br/>';
+echo 'Rating: ' . $wpapi->getRatingStars() . '<br/>';
+echo 'Downloaded: ' . $wpapi->getNumberDownloads() . '<br/>';
+echo 'Last updated: ' . $wpapi->getLastUpdate() . '<br/>';
+echo 'Added: ' . $wpapi->getCreationDate() . '<br/>';
+echo 'Header image: ' . $wpapi->getBannerImage() . '<br/>';
+echo 'Icon: ' . $wpapi->getIconImage() . '<br/>';
+echo 'Short description: ' . $wpapi->getShortDescription() . '<br/>';
+echo 'Download: ' . $wpapi->getDownloadLink() . '<br/>';
+echo 'Tags: ' . $wpapi->getTagsList();
+echo 'Donate link: ' . $wpapi->getDonateLink() . '<br/>';
