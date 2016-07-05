@@ -47,6 +47,11 @@ class wordpress_pluing_information
         return $this->results['slug'];
     }
     
+    function getPluginURL()
+    {
+        return 'https://wordpress.org/plugins/' . $this->getSlug() . '/';
+    }
+    
     function getVersion()
     {
         return $this->results['version'];
