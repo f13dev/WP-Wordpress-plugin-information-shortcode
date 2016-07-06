@@ -41,7 +41,7 @@ function wp_plugin_information( $atts, $content = null )
     require_once('wp-api/wp-api.class.php');
     $wpapi = new wordpress_pluing_information($slug);
     // Check if a correct slug was entered
-    if ($wpapi->results != [])
+    if ($wpapi->results != null)
         {
         ?>
         <div class="wp-container">
