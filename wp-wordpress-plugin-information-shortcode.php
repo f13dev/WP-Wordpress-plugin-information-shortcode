@@ -25,9 +25,19 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
+// Register the shortcode
 add_shortcode( 'wpplugin', 'wp_plugin_information');
+// Register the css
+add_action( 'wp_enqueue_scripts', 'wp_plugin_information_stylesheet');
 
 function wp_plugin_information()
 {
+    echo '<link rel="stylesheet" type="text/css" href="wp-api/css/wp-api.css">';
     include_once('wp-api/wp-api-formatted.php');
+}
+
+function wp_plugin_information_stylesheet()
+{
+    wp_register_style( 'prefix-style', plugins_url('wp-api/css/wp-api.css', __FILE__));
+    wp_enqueue_style( 'prefix-style' );
 }
