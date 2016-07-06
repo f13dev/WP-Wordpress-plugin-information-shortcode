@@ -85,20 +85,23 @@ add_action( 'wp_enqueue_scripts', 'wp_plugin_information_stylesheet');
 
  function getRatingStars($aRating)
  {
+     $string;
      for ($x = 1; $x < $aRating; $x++ )
      {
-         echo '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'WP-Wordpress-plugin-information-shortcode/img/star-full.png" />';
+         $string .= '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'WP-Wordpress-plugin-information-shortcode/img/star-full.png" />';
      }
      if (strpos($aRating, '.'))
      {
-         echo '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'WP-Wordpress-plugin-information-shortcode/img/star-half.png" />';
+         $string .= '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'WP-Wordpress-plugin-information-shortcode/img/star-half.png" />';
          $x++;
      }
      while ($x <= 5)
      {
-         echo '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'WP-Wordpress-plugin-information-shortcode/img/star-empty.png" />';
+         $string .= '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'WP-Wordpress-plugin-information-shortcode/img/star-empty.png" />';
          $x++;
      }
+     
+     return $string;
  }
 
  function getWPPluginResults($aSlug)
