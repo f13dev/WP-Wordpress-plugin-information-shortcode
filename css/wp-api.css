@@ -1,0 +1,118 @@
+.wp-container
+{
+    width: 100%;
+    max-width: 775px;
+    position: inherit;
+}
+
+.wp-header
+{
+    width: 100%;
+    padding-top: 32.38%;
+    box-shadow: inset 0 0 50px 4px rgba( 0, 0, 0, 0.2 ), inset 0 -1px 0 rgba( 0, 0, 0, 0.1 );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+    position: relative;
+}
+
+.wp-header > .wp-name
+{
+    font-size: 20px;
+    line-height: 1em;
+    bottom: 4%;
+    left: 3%;
+    position: absolute;
+    /*max-width: 682px;*/
+    padding: 8px 15px;
+    margin-bottom: 4px;
+    color: #fff;
+    background: rgba( 30, 30, 30, 0.9);
+    text-shadow: 0 1px 3px rgba( 0, 0, 0, 0.4);
+    border-radius: 8px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+}
+
+.wp-information
+{
+    padding: 30px 15px 30px 30px;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 30px;
+    background: #eee;
+    text-shadow: 0 1px 1px #fff;
+    box-shadow: inset 0 0px 42px -px rgba (100, 100, 100, 0.1);
+}
+
+.wp-links
+{
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+.wp-description
+{
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+.wp-button
+{
+    font-size: 15px;
+    color: #fff;
+    display: inline-block;
+    text-shadow: rgba( 0, 0, 0, 0.5) 0 1px 0;
+    border: none;
+    text-decoration: none;
+    font-weight: normal;
+    text-align: center;
+    background: #d54e21;
+    line-height: 44px;
+    margin-bottom: 1em;
+    width: 47%;
+}
+
+.wp-button:hover
+{
+    color: #fff;
+}
+.wp-moreinfo
+{
+    right: 0;
+    position: absolute;
+}
+
+.wp-tags > ul
+{
+    display: inline-block;
+}
+
+.wp-tags > ul > li 
+{
+    display: inline-block;
+    background: #fff;
+    padding: 5px 10px;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.wp-rating
+{
+    display: inline-block;
+    position: inherit;
+    margin-bottom: 0;
+    min-width: 350px;
+    line-height: 20px;
+    margin-bottom: 0.6em;
+}
+
+.wp-downloads
+{
+    padding-top: 0;
+    margin-bottom: 0.6em;
+}
