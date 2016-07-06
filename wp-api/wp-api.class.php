@@ -107,16 +107,16 @@ class wordpress_pluing_information
     {
         for ($x = 1; $x < $this->getRating(); $x++ )
         {
-            echo '<img src="img/star-full.png" />';
+            echo '<img src="' . plugin_dir_url(dirname(__FILE__)) . '/wp-api/img/star-full.png" />';
         }
         if (strpos($this->getRating(), '.'))
         {
-            echo '<img src="img/star-half.png" />';
+            echo '<img src="' . plugin_dir_url(dirname(__FILE__)) . '/wp-api/img/star-half.png" />';
             $x++;
         }
         while ($x <= 5)
         {
-            echo '<img src="img/star-empty.png" />';
+            echo '<img src="' . plugin_dir_url(dirname(__FILE__)) . '/wp-api/img/star-empty.png" />';
             $x++;
         }
     }

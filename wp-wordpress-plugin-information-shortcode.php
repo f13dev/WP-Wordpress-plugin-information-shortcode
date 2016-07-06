@@ -33,7 +33,45 @@ add_action( 'wp_enqueue_scripts', 'wp_plugin_information_stylesheet');
 // How to handle the shortcode
 function wp_plugin_information()
 {
-    include_once('wp-api/wp-api-formatted.php');
+    require_once('wp-api/wp-api.class.php');
+    $wpapi = new wordpress_pluing_information('akismet');
+    // Check if a correct slug was entered
+    if ($wpapi->results != [])
+        {
+        ?>
+        <div class="wp-container">
+            <div class="wp-header" style="background-image: url(<?php echo $wpapi->getBannerURL(); ?>);">
+                <p class="wp-name"><?php echo $wpapi->getName(); ?></p>
+            </div>
+            <div class="wp-information">
+                <div class="wp-description">
+                    <p class="wp-rating">
+                        <?php echo $wpapi->getRatingStars(); ?> 
+                        <?php echo $wpapi->getRating(); ?> from 
+                        <?php echo $wpapi->getRatingNumber(); ?> ratings
+                    </p>
+                    <p class="wp-downloads">
+                        Downloads: <?php echo $wpapi->getNumberDownloads(); ?>
+                    </p>
+                    <br/>
+                    <p class="wp-short-description">
+                        <strong>Description: </strong><?php echo $wpapi->getShortDescription(); ?>
+                    </p>
+                </div>
+                <div class="wp-links">
+                    <a class="wp-button" href="<?php echo $wpapi->getDownloadURL(); ?>">Download Version <?php  echo $wpapi->getVersion();?></a>
+                    <a class="wp-button" href="<?php echo $wpapi->getPluginURL(); ?>">More information</a>
+                </div>
+                <br style="clear: both" />
+                <div class="wp-tags">Tags: <?php echo $wpapi->getTagsList(); ?></div>
+            </div>
+        </div>
+        <?php
+        }
+        else
+        {
+            echo 'The slug "' . $wpapi->slug . '" was not found on WordPress.org';
+        }
 }
 
 // Add the stylesheet
