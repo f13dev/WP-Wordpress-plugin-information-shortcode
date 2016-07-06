@@ -46,14 +46,14 @@
 
 .wp-links
 {
-    width: 30%;
+    width: 100%;
     position: relative;
     float: left;
 }
 
 .wp-description
 {
-    width: 70%;
+    width: 100%;
     position: relative;
     float: left;
 }
@@ -62,7 +62,7 @@
 {
     font-size: 15px;
     color: #fff;
-    display: block;
+    display: inline-block;
     text-shadow: rgba( 0, 0, 0, 0.5) 0 1px 0;
     border: none;
     text-decoration: none;
@@ -70,7 +70,19 @@
     text-align: center;
     background: #d54e21;
     line-height: 44px;
-    margin-bottom: 0.3em;
+    margin-bottom: 1em;
+    width: 47%;
+}
+
+.wp-download
+{
+    
+}
+
+.wp-moreinfo
+{
+    right: 0;
+    position: absolute;
 }
 
 .wp-tags > ul
@@ -94,16 +106,13 @@
     display: inline-block;
     position: inherit;
     margin-bottom: 0;
-    max-width: 60%;
+    min-width: 350px;
     line-height: 20px;
+    margin-bottom: 0.6em;
 }
 
 .wp-downloads
 {
-    display: inline-block;
-    position: inherit;
-    margin-bottom:0;
-    width: 35%;
-    line-height: 20px;
-    text-align: right;
+    padding-top: 0;
+    margin-bottom: 0.6em;
 }

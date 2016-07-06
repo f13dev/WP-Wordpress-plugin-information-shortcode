@@ -50,22 +50,22 @@ function wp_plugin_information( $atts, $content = null )
             </div>
             <div class="wp-information">
                 <div class="wp-description">
-                    <p class="wp-rating">
+                    <div class="wp-rating">
                         <?php echo $wpapi->getRatingStars(); ?> 
                         <?php echo $wpapi->getRating(); ?> from 
                         <?php echo $wpapi->getRatingNumber(); ?> ratings
-                    </p>
-                    <p class="wp-downloads">
-                        Downloads: <?php echo $wpapi->getNumberDownloads(); ?>
-                    </p>
+                    </div>
                     <br/>
                     <p class="wp-short-description">
                         <strong>Description: </strong><?php echo $wpapi->getShortDescription(); ?>
                     </p>
+                    <div class="wp-downloads">
+                        <strong>Downloads</strong>: <?php echo $wpapi->getNumberDownloads(); ?>
+                    </div>
                 </div>
                 <div class="wp-links">
-                    <a class="wp-button" href="<?php echo $wpapi->getDownloadURL(); ?>">Download Version <?php  echo $wpapi->getVersion();?></a>
-                    <a class="wp-button" href="<?php echo $wpapi->getPluginURL(); ?>">More information</a>
+                    <a class="wp-button wp-download" href="<?php echo $wpapi->getDownloadURL(); ?>">Download Version <?php  echo $wpapi->getVersion();?></a>
+                    <a class="wp-button wp-moreinfo" href="<?php echo $wpapi->getPluginURL(); ?>">More information</a>
                 </div>
                 <br style="clear: both" />
                 <div class="wp-tags">Tags: <?php echo $wpapi->getTagsList(); ?></div>
