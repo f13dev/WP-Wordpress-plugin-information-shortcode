@@ -85,7 +85,7 @@ add_action( 'wp_enqueue_scripts', 'wp_plugin_information_stylesheet');
 
  function getRatingStars($aRating)
  {
-     $string;
+     $string = '';
      for ($x = 1; $x < $aRating; $x++ )
      {
          $string .= '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'WP-Wordpress-plugin-information-shortcode/img/star-full.png" />';
