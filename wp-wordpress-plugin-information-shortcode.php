@@ -31,10 +31,15 @@ add_shortcode( 'wpplugin', 'wp_plugin_information');
 add_action( 'wp_enqueue_scripts', 'wp_plugin_information_stylesheet');
 
 // How to handle the shortcode
-function wp_plugin_information()
+function wp_plugin_information( $atts, $content = null )
 {
+    // Get the attributes
+    extract( shortcode_atts ( array (
+        'slug' => 'none' // Default slug won't show a plugin
+    ), $atts ));
+    
     require_once('wp-api/wp-api.class.php');
-    $wpapi = new wordpress_pluing_information('akismet');
+    $wpapi = new wordpress_pluing_information($slug);
     // Check if a correct slug was entered
     if ($wpapi->results != [])
         {
