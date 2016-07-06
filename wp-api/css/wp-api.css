@@ -74,11 +74,10 @@
     width: 47%;
 }
 
-.wp-download
+.wp-button:hover
 {
-    
+    color: #fff;
 }
-
 .wp-moreinfo
 {
     right: 0;
