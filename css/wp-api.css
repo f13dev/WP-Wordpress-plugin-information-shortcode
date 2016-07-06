@@ -14,6 +14,7 @@
     background-size: 100%;
     display: block;
     position: relative;
+    border-radius: 10px 10px 0 0;
 }
 
 .wp-header > .wp-name
@@ -36,13 +37,14 @@
 
 .wp-information
 {
-    padding: 30px 15px 30px 30px;
+    padding: 30px 15px 10px 30px;
     font-size: 16px;
     line-height: 24px;
-    margin: 0 0 30px;
+    margin: 0;
     background: #eee;
     text-shadow: 0 1px 1px #fff;
     box-shadow: inset 0 0px 42px -px rgba (100, 100, 100, 0.1);
+    border-radius: 0 0 10px 10px;
 }
 
 .wp-links
