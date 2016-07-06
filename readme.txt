@@ -8,7 +8,7 @@ Stable tag: 4.5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-If you have written a plugin for WordPress, showcase it's stats on your blog using WP Plugin Information Shortcode. Simply add [wpplugin slug="a-slug"] to your blog.
+If you have written a plugin for WordPress, showcase it's stats on your blog using WP Plugin Information Shortcode.
 
 == Description ==
 
@@ -24,6 +24,9 @@ Simply find the slug to your plugin on wordpress.org, which will be the last sec
 
 == Frequently Asked Questions ==
 
+= How do I find my plugin slug =
+
+Find your plugin on 'https://wordpress.org/plugins/', for example Buddy Press is at https://wordpress.org/plugins/buddypress/, the slug is the final part of the URL, in this case 'buddypress'. The slug may also contain '-' hyphens.
 
 == Screenshots ==
 
