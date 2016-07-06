@@ -30,12 +30,13 @@ add_shortcode( 'wpplugin', 'wp_plugin_information');
 // Register the css
 add_action( 'wp_enqueue_scripts', 'wp_plugin_information_stylesheet');
 
+// How to handle the shortcode
 function wp_plugin_information()
 {
-    echo '<link rel="stylesheet" type="text/css" href="wp-api/css/wp-api.css">';
     include_once('wp-api/wp-api-formatted.php');
 }
 
+// Add the stylesheet
 function wp_plugin_information_stylesheet()
 {
     wp_register_style( 'prefix-style', plugins_url('wp-api/css/wp-api.css', __FILE__));
