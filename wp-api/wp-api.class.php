@@ -153,7 +153,7 @@ class wordpress_pluing_information
         }
         else
         {
-            return 'img/default_banner.png';
+            return plugin_dir_url(dirname(__FILE__)) . '/wp-api/img/default_banner.png';
         }
     }
     
@@ -175,7 +175,7 @@ class wordpress_pluing_information
         }
         else 
         {
-            return 'img/default_icon.png';
+            return plugin_dir_url(dirname(__FILE__)) . '/wp-api/img/default_icon.png';
         }
     }
     
