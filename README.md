@@ -2,11 +2,11 @@
 A Wordpress plugin that utilises the Wordpress API to display information and statistics of a Wordpress plugin hosted on Wordpress.org via your blog. Showcase plugins that you have written or contributed to on your blog.
 
 ## About
-Developer: [F13Dev](http://f13dev.com)
-Tags: WordPress, plugin, api, information, shortcode
-Requires: WordPress 3.0.1 and up
-Tested to: WordPress 4.5.3
-License: [GPLv3 or later](http://www.gnu.org/licenses/gpl-3.0.html)
+* Developer: [F13Dev](http://f13dev.com)
+* Tags: WordPress, plugin, api, information, shortcode
+* Requires: WordPress 3.0.1 and up
+* Tested to: WordPress 4.5.3
+* License: [GPLv3 or later](http://www.gnu.org/licenses/gpl-3.0.html)
 
 ## Description
 Using WP Plugin Information Shortcode you can simply add information and statistics about your plugin to any page or post on your WordPress powered website. 
