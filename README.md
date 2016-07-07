@@ -30,5 +30,5 @@ A) Find your plugin on 'https://wordpress.org/plugins/', for example Buddy Press
 
 ## Changelog
 
-= 1.0 =
+### 1.0
 * Initial release
