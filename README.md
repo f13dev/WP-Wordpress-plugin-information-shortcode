@@ -18,9 +18,9 @@ Simply find the slug to your plugin on wordpress.org, which will be the last sec
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Add the shortcode [wpplugin slug="my-plugin-name"] to the desired location on your blog
 
-## Frequently Asked Questions ==
+## Frequently Asked Questions
 
-Q) How do I find my plugin slug =
+Q) How do I find my plugin slug
 
 A) Find your plugin on 'https://wordpress.org/plugins/', for example Buddy Press is at https://wordpress.org/plugins/buddypress/, the slug is the final part of the URL, in this case 'buddypress'. The slug may also contain '-' hyphens.
 
