@@ -26,7 +26,8 @@ A) Find your plugin on 'https://wordpress.org/plugins/', for example Buddy Press
 
 ## Screenshots
 
-![WordPress Plugin Information Shortcode screenshot](screenshot-1.png "The results of adding [wpplugin slug="akismet"] to a blog post.")
+![WordPress Plugin Information Shortcode screenshot](screenshot-1.png)
+The results of adding [wpplugin slug="akismet"] to a blog post.
 
 ## Changelog
 
