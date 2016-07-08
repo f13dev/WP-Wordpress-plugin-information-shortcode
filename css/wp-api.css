@@ -1,11 +1,11 @@
-.wp-container
+.f13-wp-container
 {
     width: 100%;
     max-width: 775px;
     position: inherit;
 }
 
-.wp-header
+.f13-wp-header
 {
     width: 100%;
     padding-top: 32.38%;
@@ -17,7 +17,7 @@
     border-radius: 10px 10px 0 0;
 }
 
-.wp-header > .wp-name
+.f13-wp-header > .f13-wp-name
 {
     font-size: 20px;
     line-height: 1em;
@@ -35,7 +35,7 @@
     font-weight: bold;
 }
 
-.wp-information
+.f13-wp-information
 {
     padding: 30px 15px 10px 30px;
     font-size: 16px;
@@ -47,21 +47,21 @@
     border-radius: 0 0 10px 10px;
 }
 
-.wp-links
+.f13-wp-links
 {
     width: 100%;
     position: relative;
     float: left;
 }
 
-.wp-description
+.f13-wp-description
 {
     width: 100%;
     position: relative;
     float: left;
 }
 
-.wp-button
+.f13-wp-button
 {
     font-size: 15px;
     color: #fff;
@@ -77,22 +77,22 @@
     width: 47%;
 }
 
-.wp-button:hover
+.f13-wp-button:hover
 {
     color: #fff;
 }
-.wp-moreinfo
+.f13-wp-moreinfo
 {
     right: 0;
     position: absolute;
 }
 
-.wp-tags > ul
+.f13-wp-tags > ul
 {
     display: inline-block;
 }
 
-.wp-tags > ul > li 
+.f13-wp-tags > ul > li
 {
     display: inline-block;
     background: #fff;
@@ -103,7 +103,7 @@
     border: 1px solid black;
 }
 
-.wp-rating
+.f13-wp-rating
 {
     display: inline-block;
     position: inherit;
@@ -113,7 +113,7 @@
     margin-bottom: 0.6em;
 }
 
-.wp-downloads
+.f13-wp-downloads
 {
     padding-top: 0;
     margin-bottom: 0.6em;
