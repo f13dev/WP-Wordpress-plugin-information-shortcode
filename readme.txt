@@ -12,7 +12,7 @@ If you have written a plugin for WordPress, showcase it's stats on your blog usi
 
 == Description ==
 
-Using WP Plugin Information Shortcode you can simply add information and statistics about your plugin to any page or post on your WordPress powered website. 
+Using WP Plugin Information Shortcode you can simply add information and statistics about your plugin to any page or post on your WordPress powered website.
 
 Simply find the slug to your plugin on wordpress.org, which will be the last section of the URL, usually formatted as my-plugin-name, then add the shortcode [wpplugin slug="my-plugin-name"] to the desired location of your blog.
 
@@ -34,6 +34,8 @@ Find your plugin on 'https://wordpress.org/plugins/', for example Buddy Press is
 
 == Changelog ==
 
+= 1.1 =
+* Added a 10 minute transient cache to the shortcode response, each instance of the shortcode may now make a maximum of 6 api calls per hour to speed up page loading times.
 = 1.0 =
 * Initial release
 

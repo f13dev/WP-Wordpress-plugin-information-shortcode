@@ -3,7 +3,7 @@
 Plugin Name: WordPress plugin information shortcode
 Plugin URI: http://f13dev.com
 Description: This plugin enables you to enter shortcode on any page or post in your blog to show information about a WP plugin you have written.
-Version: 1.0
+Version: 1.1
 Author: Jim Valentine - f13dev
 Author URI: http://f13dev.com
 Text Domain: wp-plugin-information-shortcode
@@ -33,38 +33,49 @@ function f13_plugin_information( $atts, $content = null )
         'slug' => 'none' // Default slug won't show a plugin
     ), $atts ));
 
-    $results = f13_getWPPluginResults($slug);
+    // Set the cache name for this instance of the shortcode
+    $cache = get_transient('wppis' . md5(serialize($atts)));
 
-    $string = '
-        <div class="f13-wp-container">
-            <div class="f13-wp-header" style="background-image: url(' . f13_getBannerURL($results['slug']) . ');">
-                <p class="f13-wp-name">' . $results['name'] . '</p>
-            </div>
-            <div class="f13-wp-information">
-                <div class="f13-wp-description">
-                    <div class="f13-wp-rating">' .
-                        f13_getRatingStars($results['rating'] / 20) . ' ' .
-                        $results['rating'] . ' from ' .
-                        $results['num_ratings'] . ' ratings
-                    </div>
-                    <br/>
-                    <p class="f13-wp-short-description">
-                        <strong>Description: </strong>' . $results['short_description'] . '
-                    </p>
-                    <div class="f13-wp-downloads">
-                        <strong>Downloads</strong>: ' . $results['downloaded'] . '
-                    </div>
-                </div>
-                <div class="f13-wp-links">
-                    <a class="f13-wp-button f13-wp-download" href="' .  $results['download_link'] . '">Download Version ' .  $results['version'] . '</a>
-                    <a class="f13-wp-button f13-wp-moreinfo" href="' .  f13_getPluginURL($slug) . '">More information</a>
-                </div>
-                <br style="clear: both" />
-                <div class="f13-wp-tags">Tags: ' . f13_getTagsList($results['tags']) . '</div>
-            </div>
-        </div>';
-    return $string;
+    if ($cache)
+    {
+        // If the cache exists, return it rather than re-creating it
+        return $cache;
+    }
+    else
+    {
+        $results = f13_getWPPluginResults($slug);
 
+        $string = '
+            <div class="f13-wp-container">
+                <div class="f13-wp-header" style="background-image: url(' . f13_getBannerURL($results['slug']) . ');">
+                    <p class="f13-wp-name">' . $results['name'] . '</p>
+                </div>
+                <div class="f13-wp-information">
+                    <div class="f13-wp-description">
+                        <div class="f13-wp-rating">' .
+                            f13_getRatingStars($results['rating'] / 20) . ' ' .
+                            $results['rating'] . ' from ' .
+                            $results['num_ratings'] . ' ratings
+                        </div>
+                        <br/>
+                        <p class="f13-wp-short-description">
+                            <strong>Description: </strong>' . $results['short_description'] . '
+                        </p>
+                        <div class="f13-wp-downloads">
+                            <strong>Downloads</strong>: ' . $results['downloaded'] . '
+                        </div>
+                    </div>
+                    <div class="f13-wp-links">
+                        <a class="f13-wp-button f13-wp-download" href="' .  $results['download_link'] . '">Download Version ' .  $results['version'] . '</a>
+                        <a class="f13-wp-button f13-wp-moreinfo" href="' .  f13_getPluginURL($slug) . '">More information</a>
+                    </div>
+                    <br style="clear: both" />
+                    <div class="f13-wp-tags">Tags: ' . f13_getTagsList($results['tags']) . '</div>
+                </div>
+            </div>';
+        set_transient('wppis' . md5(serialize($atts)), $string, 10 * 60);
+        return $string;
+    }
 }
 
 // Add the stylesheet
